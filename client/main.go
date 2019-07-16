@@ -15,8 +15,12 @@ const (
 	address = "localhost:50051"
 )
 
-// Main executes the main thread
-func Main() {
+func main() {
+	CallDMN()
+}
+
+// CallDMN evaluate the DMN model
+func CallDMN() {
 
 	conn, _ := grpc.Dial(address, grpc.WithInsecure())
 	defer conn.Close()
