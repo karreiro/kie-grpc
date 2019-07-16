@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.kie.grpc";
+option java_outer_classname = "DinnerProto";
+option objc_class_prefix = "DIN";
+
+package kie;
+
+service Dinner {
+    rpc process (DinnerInput) returns (DinnerOutput) {
+    }
+}
+
+message DinnerInput {
+    bool guestsWithChildren = 1;
+    string season = 2;
+    int32 numberOfGuests = 3;
+    int32 temp = 4;
+    int32 rainProbability = 5;
+
+}
+
+message DinnerOutput {
+    string dish = 1;
+    repeated string drinks = 2;
+    string whereToEat = 3;
+}
